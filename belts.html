@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e8">
+  <title>Leather Belts | MasterCraft Leather Atelier</title>
+  <style>
+    :root { --ink: #2e211b; --muted: #75665b; --paper: #f5f0e8; --leather: #8b4e32; font-family: "Segoe UI", Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); }
+    header, footer { padding: 22px 7vw; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(46,33,27,.16); }
+    .brand { color: inherit; font: 700 19px Georgia, "Times New Roman", serif; text-decoration: none; }
+    .brand span { display: block; margin-top: 3px; font: 10px "Segoe UI", Arial, sans-serif; letter-spacing: .25em; text-transform: uppercase; }
+    nav a, .back { color: var(--ink); font-size: 12px; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    main { width: min(1120px, 86vw); margin: auto; padding: 64px 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 7vw; }
+    .eyebrow { color: var(--leather); font-size: 11px; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
+    h1 { margin: 16px 0; font: 400 clamp(48px, 7vw, 76px)/1 Georgia, "Times New Roman", serif; letter-spacing: -.05em; }
+    p { max-width: 460px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .image { min-height: 440px; background: url("https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=1200&q=85") center / cover, #a77c5d; }
+    .designs { width: min(1120px, 86vw); margin: 0 auto 76px; }
+    .designs h2 { margin: 10px 0 12px; font: 400 clamp(30px, 4vw, 42px) Georgia, "Times New Roman", serif; }
+    .designs-intro { margin: 0 0 28px; max-width: 650px; }
+    .design-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .design-card { min-width: 0; }
+    .design-photo { position: relative; overflow: hidden; aspect-ratio: 4 / 4.8; background: radial-gradient(ellipse at 50% 35%, #e9d8c5, #b18b6d 70%); }
+    .design-photo::before { position: absolute; top: 42%; left: -12%; width: 124%; height: 17%; border: 2px dashed rgba(245, 240, 232, .72); background: #70432e; box-shadow: 0 8px 18px rgba(46, 33, 27, .2); content: ""; transform: rotate(-18deg); }
+    .design-photo::after { position: absolute; top: 37%; left: 42%; width: 22%; height: 25%; border: 7px solid #c3945a; border-radius: 5px; box-shadow: 0 2px 8px rgba(46, 33, 27, .3); content: ""; transform: rotate(-18deg); }
+    .design-card h3 { margin: 13px 0 5px; font: 400 19px Georgia, "Times New Roman", serif; }
+    .design-card p { margin: 0; font-size: 13px; line-height: 1.6; }
+    .stitched { background: radial-gradient(ellipse at 50% 35%, #f0e5d7, #b18b6d 70%); }
+    .stitched::before { border-style: dashed; background: #70432e; }
+    .stitched::after { border-radius: 5px; border-color: #c3945a; }
+    .braided { background: radial-gradient(ellipse at 50% 35%, #e5d9ca, #8d7763 70%); }
+    .braided::before { height: 21%; border: 0; background: repeating-linear-gradient(135deg, #4e3428 0 8px, #a06b47 8px 16px, #67432f 16px 24px); }
+    .braided::after { border-width: 5px; border-color: #9c744f; border-radius: 50%; }
+    .western { background: radial-gradient(ellipse at 50% 35%, #e8d6bd, #a07853 70%); }
+    .western::before { height: 20%; border: 0; background: #5d3828; box-shadow: inset 0 0 0 3px #c69a66; }
+    .western::after { width: 25%; height: 25%; border-width: 5px; border-color: #d6ad72; border-radius: 50% 50% 42% 42%; }
+    .statement { background: radial-gradient(ellipse at 50% 35%, #e0d1c3, #806250 70%); }
+    .statement::before { top: 39%; height: 25%; border: 0; background: #392820; box-shadow: inset 0 0 0 4px #8e6344, 0 8px 18px rgba(46, 33, 27, .2); transform: rotate(-12deg); }
+    .statement::after { top: 34%; left: 40%; width: 26%; height: 33%; border-width: 8px; border-color: #d1a56b; border-radius: 9px; transform: rotate(-12deg); }
+    footer { margin-top: auto; border-top: 1px solid rgba(46,33,27,.16); border-bottom: 0; color: var(--muted); font-size: 11px; }
+    @media (max-width: 850px) { .design-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 650px) { main { grid-template-columns: 1fr; padding: 44px 0; gap: 28px; } .image { min-height: 340px; } .designs { margin-bottom: 54px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">MasterCraft<span>Leather Atelier</span></a>
+    <nav><a href="index.html#collection">All collections</a></nav>
+  </header>
+  <main>
+    <div>
+      <div class="eyebrow">Handmade leather goods</div>
+      <h1>Belts</h1>
+      <p>Find a dependable finishing touch in a handcrafted leather belt, made with durable materials and understated style.</p>
+      <a class="back" href="index.html#collection">← Back to all collections</a>
+    </div>
+    <div class="image" role="img" aria-label="Handcrafted leather belt"></div>
+  </main>
+  <section class="designs" aria-labelledby="designs-title">
+    <div class="eyebrow">Distinctive handcrafted designs</div>
+    <h2 id="designs-title">Belts with character</h2>
+    <p class="designs-intro">From clean, everyday styles to bold statement pieces, explore designs with distinctive stitching, textures, and buckle details.</p>
+    <div class="design-grid">
+      <article class="design-card"><div class="design-photo stitched" role="img" aria-label="Hand-stitched leather belt design"></div><h3>Hand-stitched Classic</h3><p>Contrast edge stitching with a solid everyday buckle.</p></article>
+      <article class="design-card"><div class="design-photo braided" role="img" aria-label="Braided leather belt design"></div><h3>Artisan Braid</h3><p>Textured woven leather for a distinctive finish.</p></article>
+      <article class="design-card"><div class="design-photo western" role="img" aria-label="Decorative leather belt design"></div><h3>Heritage Ornament</h3><p>A confident design inspired by traditional leatherwork.</p></article>
+      <article class="design-card"><div class="design-photo statement" role="img" aria-label="Wide statement leather belt design"></div><h3>Wide Statement</h3><p>A bold silhouette with a sculptural buckle detail.</p></article>
+    </div>
+  </section>
+  <footer><span>© <span id="year"></span> MasterCraft Leather Atelier</span><span>Handmade with care.</span></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

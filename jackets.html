@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e8">
+  <title>Leather Jackets | MasterCraft Leather Atelier</title>
+  <style>
+    :root { --ink: #2e211b; --muted: #75665b; --paper: #f5f0e8; --leather: #8b4e32; font-family: "Segoe UI", Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background: var(--paper); color: var(--ink); }
+    header, footer { padding: 22px 7vw; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(46,33,27,.16); }
+    .brand { color: inherit; font: 700 19px Georgia, "Times New Roman", serif; text-decoration: none; }
+    .brand span { display: block; margin-top: 3px; font: 10px "Segoe UI", Arial, sans-serif; letter-spacing: .25em; text-transform: uppercase; }
+    nav a, .back { color: var(--ink); font-size: 12px; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    main { width: min(1120px, 86vw); margin: auto; padding: 64px 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 7vw; }
+    .eyebrow { color: var(--leather); font-size: 11px; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
+    h1 { margin: 16px 0; font: 400 clamp(48px, 7vw, 76px)/1 Georgia, "Times New Roman", serif; letter-spacing: -.05em; }
+    p { max-width: 460px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .image { min-height: 440px; background: url("https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=85") center / cover, #775a46; }
+    .designs { width: min(1120px, 86vw); margin: 0 auto 76px; }
+    .designs h2 { margin: 10px 0 28px; font: 400 clamp(30px, 4vw, 42px) Georgia, "Times New Roman", serif; }
+    .design-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .design-card { min-width: 0; }
+    .design-photo { aspect-ratio: 4 / 4.8; background-position: center; background-size: cover; background-color: #775a46; }
+    .design-card h3 { margin: 13px 0 5px; font: 400 19px Georgia, "Times New Roman", serif; }
+    .design-card p { margin: 0; font-size: 13px; line-height: 1.6; }
+    .biker { background-image: url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"); }
+    .moto { background-image: url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=700&q=80"); }
+    .minimal { background-image: url("https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=700&q=80"); }
+    .vintage { background-image: url("https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80"); }
+    footer { margin-top: auto; border-top: 1px solid rgba(46,33,27,.16); border-bottom: 0; color: var(--muted); font-size: 11px; }
+    @media (max-width: 850px) { .design-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 650px) { main { grid-template-columns: 1fr; padding: 44px 0; gap: 28px; } .image { min-height: 340px; } .designs { margin-bottom: 54px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">MasterCraft<span>Leather Atelier</span></a>
+    <nav><a href="index.html#collection">All collections</a></nav>
+  </header>
+  <main>
+    <div>
+      <div class="eyebrow">Handmade leather goods</div>
+      <h1>Jackets</h1>
+      <p>Discover timeless leather jackets with a comfortable fit and considered details, made to become a lasting part of your wardrobe.</p>
+      <a class="back" href="index.html#collection">← Back to all collections</a>
+    </div>
+    <div class="image" role="img" aria-label="Leather jacket"></div>
+  </main>
+  <section class="designs" aria-labelledby="designs-title">
+    <div class="eyebrow">Explore the collection</div>
+    <h2 id="designs-title">Distinctive layers</h2>
+    <div class="design-grid">
+      <article class="design-card"><div class="design-photo biker" role="img" aria-label="Leather biker jacket design"></div><h3>Rider Jacket</h3><p>Bold lines and functional details.</p></article>
+      <article class="design-card"><div class="design-photo moto" role="img" aria-label="Leather moto jacket design"></div><h3>City Moto</h3><p>A versatile shape for everyday wear.</p></article>
+      <article class="design-card"><div class="design-photo minimal" role="img" aria-label="Minimal leather jacket design"></div><h3>Clean Cut</h3><p>Understated styling with a neat profile.</p></article>
+      <article class="design-card"><div class="design-photo vintage" role="img" aria-label="Vintage inspired leather jacket design"></div><h3>Heritage Zip</h3><p>Classic workshop character, made to be worn in.</p></article>
+    </div>
+  </section>
+  <footer><span>© <span id="year"></span> MasterCraft Leather Atelier</span><span>Handmade with care.</span></footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

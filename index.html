@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e8">
+  <meta name="description" content="MasterCraft Leather Atelier creates timeless, handcrafted leather goods made to be carried for years.">
+  <title>MasterCraft Leather Atelier</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #2e211b;
+      --muted: #75665b;
+      --paper: #f5f0e8;
+      --cream: #ebe1d3;
+      --leather: #8b4e32;
+      --line: rgba(46, 33, 27, .16);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+
+    .topbar {
+      height: 76px;
+      padding: 0 7vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+    .brand span {
+      display: block;
+      margin-top: 2px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    nav { display: flex; gap: 34px; }
+    nav a {
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    nav a:hover { color: var(--leather); }
+
+    .hero {
+      min-height: 590px;
+      padding: 76px 7vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 5vw;
+    }
+    .eyebrow {
+      color: var(--leather);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .23em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+    h1 {
+      max-width: 560px;
+      margin: 20px 0;
+      font-size: clamp(48px, 6.5vw, 82px);
+      letter-spacing: -.055em;
+      line-height: .99;
+    }
+    .hero-copy > p {
+      max-width: 420px;
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .button {
+      min-height: 48px;
+      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      color: #fffaf3;
+      font-size: 11px;
+      letter-spacing: .13em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .2s ease;
+    }
+    .button:hover { background: var(--leather); }
+    .hero-image {
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(27, 17, 12, .03), rgba(27, 17, 12, .2)),
+        url("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1400&q=85") center 52% / cover,
+        #a77c5d;
+    }
+    .image-note {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      padding: 12px 16px;
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .intro {
+      padding: 76px 7vw 84px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 9vw;
+      background: var(--cream);
+    }
+    .intro h2 { max-width: 360px; margin: 12px 0 0; font-size: 42px; line-height: 1.12; }
+    .intro p { max-width: 610px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.9; }
+    .intro p + p { margin-top: 15px; }
+
+    .collection { padding: 84px 7vw 96px; }
+    .section-heading {
+      margin-bottom: 34px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .section-heading h2 { margin: 10px 0 0; font-size: 44px; }
+    .section-heading p { max-width: 310px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+    .card { min-width: 0; }
+    .card-image {
+      aspect-ratio: 4 / 4.7;
+      background-position: center;
+      background-size: cover;
+    }
+    .card-image.bag {
+      background-image: url("https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80");
+      background-color: #b28b6f;
+    }
+    .card-image.wallet {
+      background-image: url("https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80");
+      background-color: #91664c;
+    }
+    .card-image.jacket {
+      background-image: url("https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80");
+      background-color: #775a46;
+    }
+    .card-image.belt {
+      background-image: url("https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=800&q=80");
+      background-color: #a77c5d;
+    }
+    .card h3 { margin: 17px 0 5px; font-size: 23px; }
+    .card p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .contact {
+      padding: 72px 7vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      background: #38271e;
+      color: #fffaf3;
+    }
+    .contact h2 { margin: 10px 0 8px; font-size: 40px; }
+    .contact p { margin: 0; color: #d8c8b8; font-size: 14px; line-height: 1.7; }
+    .contact-details { margin-top: 14px !important; display: flex; flex-wrap: wrap; gap: 10px 24px; }
+    .contact-details a { color: #fffaf3; text-decoration: none; }
+    .contact-details a:hover { text-decoration: underline; }
+    .contact .eyebrow { color: #d39a70; }
+    footer {
+      padding: 20px 7vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 720px) {
+      .topbar { height: auto; min-height: 72px; padding: 15px 6vw; }
+      nav { gap: 14px; }
+      nav a { font-size: 10px; letter-spacing: .05em; }
+      .hero { min-height: 0; padding: 58px 6vw; grid-template-columns: 1fr; gap: 38px; }
+      .hero-image { min-height: 360px; }
+      .intro { padding: 58px 6vw; grid-template-columns: 1fr; gap: 23px; }
+      .collection { padding: 62px 6vw 70px; }
+      .section-heading { align-items: start; flex-direction: column; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 14px; }
+      .contact { padding: 54px 6vw; align-items: start; flex-direction: column; }
+      footer { padding: 18px 6vw; flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 420px) {
+      .brand { font-size: 16px; }
+      nav { gap: 10px; }
+      nav a { font-size: 9px; }
+      .hero-image { min-height: 300px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="MasterCraft Leather Atelier home">
+      MasterCraft
+      <span>Leather Atelier</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#story">Our story</a>
+      <a href="#collection">Collection</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Made by hand. Made to last.</div>
+        <h1>Leather with a life of its own.</h1>
+        <p>Thoughtful, handcrafted leather goods shaped by traditional techniques and made for the everyday journeys ahead.</p>
+        <a class="button" href="#collection">Explore the collection</a>
+      </div>
+      <div class="hero-image" role="img" aria-label="A timeless leather bag">
+        <div class="image-note">Crafted slowly, carried often.</div>
+      </div>
+    </section>
+
+    <section class="intro" id="story">
+      <div>
+        <div class="eyebrow">The atelier</div>
+        <h2>Good things take a skilled hand.</h2>
+      </div>
+      <div>
+        <p>At MasterCraft Leather Atelier, we believe the best things are made with care. Every piece begins with carefully chosen leather, shaped and finished by hand with an eye for the little details.</p>
+        <p>Our approach is simple: make useful things beautifully, so they grow more personal with every year of use.</p>
+      </div>
+    </section>
+
+    <section class="collection" id="collection">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Made for everyday</div>
+          <h2>The collection</h2>
+        </div>
+        <p>Explore handcrafted bags, jackets, wallets, and belts made to age beautifully.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-image bag" role="img" aria-label="Handcrafted leather bag"></div>
+          <h3>Bags</h3>
+          <p>Everyday companions, made to carry your story.</p>
+          <a class="button" href="bags.html">Explore bags</a>
+        </article>
+        <article class="card">
+          <div class="card-image jacket" role="img" aria-label="Leather jacket"></div>
+          <h3>Jackets</h3>
+          <p>Timeless layers with character in every detail.</p>
+          <a class="button" href="jackets.html">Explore jackets</a>
+        </article>
+        <article class="card">
+          <div class="card-image wallet" role="img" aria-label="Handcrafted leather wallet"></div>
+          <h3>Wallets</h3>
+          <p>Useful, considered essentials for every day.</p>
+          <a class="button" href="wallets.html">Explore wallets</a>
+        </article>
+        <article class="card">
+          <div class="card-image belt" role="img" aria-label="Handcrafted leather belt"></div>
+          <h3>Belts</h3>
+          <p>Durable, handcrafted finishing touches.</p>
+          <a class="button" href="belts.html">Explore belts</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <div class="eyebrow">A piece of your own</div>
+        <h2>Have something in mind?</h2>
+        <p>Custom commissions are welcome. Get in touch to discuss your idea.</p>
+        <p class="contact-details">
+          <a href="tel:0743260152">Phone: 0743260152</a>
+          <a href="mailto:joycekariuki461@gmail.com">joycekariuki461@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> MasterCraft Leather Atelier</span>
+    <span>Handmade with care.</span>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
