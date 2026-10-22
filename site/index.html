@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#f5f0e8">
   <meta name="description" content="MasterCraft Leather Atelier creates timeless, handcrafted leather goods made to be carried for years.">
   <title>MasterCraft Leather Atelier</title>
+  <script src="cart.js" defer></script>
   <style>
     :root {
       color-scheme: light;
@@ -55,6 +56,7 @@
       text-transform: uppercase;
     }
     nav a:hover { color: var(--leather); }
+    .nav-cart { padding: 8px 12px; border: 1px solid var(--line); }
 
     .hero {
       min-height: 590px;
@@ -223,6 +225,7 @@
       <a href="#story">Our story</a>
       <a href="#collection">Collection</a>
       <a href="#contact">Contact</a>
+      <a class="nav-cart" href="cart.html">Cart (<span data-cart-count>0</span>)</a>
     </nav>
   </header>
 

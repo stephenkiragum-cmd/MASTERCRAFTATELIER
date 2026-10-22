@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f0e8">
   <title>Leather Bags | MasterCraft Leather Atelier</title>
+  <script src="cart.js" defer></script>
   <style>
     :root { --ink: #2e211b; --muted: #75665b; --paper: #f5f0e8; --leather: #8b4e32; font-family: "Segoe UI", Arial, sans-serif; }
     * { box-sizing: border-box; }
@@ -20,11 +21,17 @@
     .image { min-height: 440px; background: url("https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85") center / cover, #b28b6f; }
     .designs { width: min(1120px, 86vw); margin: 0 auto 76px; }
     .designs h2 { margin: 10px 0 28px; font: 400 clamp(30px, 4vw, 42px) Georgia, "Times New Roman", serif; }
+    .price-note { margin: -16px 0 24px; font-size: 12px; }
     .design-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
     .design-card { min-width: 0; }
     .design-photo { aspect-ratio: 4 / 4.8; background-position: center; background-size: cover; background-color: #b28b6f; }
     .design-card h3 { margin: 13px 0 5px; font: 400 19px Georgia, "Times New Roman", serif; }
     .design-card p { margin: 0; font-size: 13px; line-height: 1.6; }
+    .design-price { margin-top: 10px !important; color: var(--ink); font-size: 14px !important; font-weight: 700; }
+    .add-button { min-height: 40px; margin-top: 10px; padding: 0 14px; border: 0; background: var(--ink); color: #fffaf3; cursor: pointer; font: inherit; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .add-button:hover { background: var(--leather); }
+    .cart-link { margin-left: 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .tote { background-image: url("https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"); }
     .crossbody { background-image: url("https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80"); }
     .satchel { background-image: url("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80"); }
@@ -37,7 +44,7 @@
 <body>
   <header>
     <a class="brand" href="index.html">MasterCraft<span>Leather Atelier</span></a>
-    <nav><a href="index.html#collection">All collections</a></nav>
+    <nav><a href="index.html#collection">All collections</a><a class="cart-link" href="cart.html">Cart (<span data-cart-count>0</span>)</a></nav>
   </header>
   <main>
     <div>
@@ -51,14 +58,16 @@
   <section class="designs" aria-labelledby="designs-title">
     <div class="eyebrow">Explore the collection</div>
     <h2 id="designs-title">Bags for every day</h2>
+    <p class="price-note">Prices are starter estimates and can be updated to match your actual products.</p>
     <div class="design-grid">
-      <article class="design-card"><div class="design-photo tote" role="img" aria-label="Leather tote bag design"></div><h3>Market Tote</h3><p>Roomy, simple, and ready for daily use.</p></article>
-      <article class="design-card"><div class="design-photo crossbody" role="img" aria-label="Leather crossbody bag design"></div><h3>Compact Crossbody</h3><p>Hands-free carrying with a clean silhouette.</p></article>
-      <article class="design-card"><div class="design-photo satchel" role="img" aria-label="Leather satchel design"></div><h3>Workshop Satchel</h3><p>Structured storage with a practical vintage feel.</p></article>
-      <article class="design-card"><div class="design-photo weekender" role="img" aria-label="Leather weekender bag design"></div><h3>Weekend Holdall</h3><p>A dependable companion for short getaways.</p></article>
+      <article class="design-card"><div class="design-photo tote" role="img" aria-label="Leather tote bag design"></div><h3>Market Tote</h3><p>Roomy, simple, and ready for daily use.</p><p class="design-price">KSh 8,500</p><button class="add-button" type="button" data-add-to-cart data-product-id="bag-market-tote" data-product-name="Market Tote" data-product-price="8500" data-product-category="Bags">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo crossbody" role="img" aria-label="Leather crossbody bag design"></div><h3>Compact Crossbody</h3><p>Hands-free carrying with a clean silhouette.</p><p class="design-price">KSh 7,200</p><button class="add-button" type="button" data-add-to-cart data-product-id="bag-compact-crossbody" data-product-name="Compact Crossbody" data-product-price="7200" data-product-category="Bags">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo satchel" role="img" aria-label="Leather satchel design"></div><h3>Workshop Satchel</h3><p>Structured storage with a practical vintage feel.</p><p class="design-price">KSh 9,800</p><button class="add-button" type="button" data-add-to-cart data-product-id="bag-workshop-satchel" data-product-name="Workshop Satchel" data-product-price="9800" data-product-category="Bags">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo weekender" role="img" aria-label="Leather weekender bag design"></div><h3>Weekend Holdall</h3><p>A dependable companion for short getaways.</p><p class="design-price">KSh 14,500</p><button class="add-button" type="button" data-add-to-cart data-product-id="bag-weekend-holdall" data-product-name="Weekend Holdall" data-product-price="14500" data-product-category="Bags">Add to cart</button></article>
     </div>
   </section>
   <footer><span>© <span id="year"></span> MasterCraft Leather Atelier</span><span>Handmade with care.</span></footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <p id="cart-status" class="sr-only" role="status" aria-live="polite"></p>
 </body>
 </html>

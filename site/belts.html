@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f0e8">
   <title>Leather Belts | MasterCraft Leather Atelier</title>
+  <script src="cart.js" defer></script>
   <style>
     :root { --ink: #2e211b; --muted: #75665b; --paper: #f5f0e8; --leather: #8b4e32; font-family: "Segoe UI", Arial, sans-serif; }
     * { box-sizing: border-box; }
@@ -21,6 +22,7 @@
     .designs { width: min(1120px, 86vw); margin: 0 auto 76px; }
     .designs h2 { margin: 10px 0 12px; font: 400 clamp(30px, 4vw, 42px) Georgia, "Times New Roman", serif; }
     .designs-intro { margin: 0 0 28px; max-width: 650px; }
+    .price-note { margin: -14px 0 24px; font-size: 12px; }
     .design-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
     .design-card { min-width: 0; }
     .design-photo { position: relative; overflow: hidden; aspect-ratio: 4 / 4.8; background: radial-gradient(ellipse at 50% 35%, #e9d8c5, #b18b6d 70%); }
@@ -28,6 +30,11 @@
     .design-photo::after { position: absolute; top: 37%; left: 42%; width: 22%; height: 25%; border: 7px solid #c3945a; border-radius: 5px; box-shadow: 0 2px 8px rgba(46, 33, 27, .3); content: ""; transform: rotate(-18deg); }
     .design-card h3 { margin: 13px 0 5px; font: 400 19px Georgia, "Times New Roman", serif; }
     .design-card p { margin: 0; font-size: 13px; line-height: 1.6; }
+    .design-price { margin-top: 10px !important; color: var(--ink); font-size: 14px !important; font-weight: 700; }
+    .add-button { min-height: 40px; margin-top: 10px; padding: 0 14px; border: 0; background: var(--ink); color: #fffaf3; cursor: pointer; font: inherit; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .add-button:hover { background: var(--leather); }
+    .cart-link { margin-left: 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .stitched { background: radial-gradient(ellipse at 50% 35%, #f0e5d7, #b18b6d 70%); }
     .stitched::before { border-style: dashed; background: #70432e; }
     .stitched::after { border-radius: 5px; border-color: #c3945a; }
@@ -48,7 +55,7 @@
 <body>
   <header>
     <a class="brand" href="index.html">MasterCraft<span>Leather Atelier</span></a>
-    <nav><a href="index.html#collection">All collections</a></nav>
+    <nav><a href="index.html#collection">All collections</a><a class="cart-link" href="cart.html">Cart (<span data-cart-count>0</span>)</a></nav>
   </header>
   <main>
     <div>
@@ -63,14 +70,16 @@
     <div class="eyebrow">Distinctive handcrafted designs</div>
     <h2 id="designs-title">Belts with character</h2>
     <p class="designs-intro">From clean, everyday styles to bold statement pieces, explore designs with distinctive stitching, textures, and buckle details.</p>
+    <p class="price-note">Prices are starter estimates and can be updated to match your actual products.</p>
     <div class="design-grid">
-      <article class="design-card"><div class="design-photo stitched" role="img" aria-label="Hand-stitched leather belt design"></div><h3>Hand-stitched Classic</h3><p>Contrast edge stitching with a solid everyday buckle.</p></article>
-      <article class="design-card"><div class="design-photo braided" role="img" aria-label="Braided leather belt design"></div><h3>Artisan Braid</h3><p>Textured woven leather for a distinctive finish.</p></article>
-      <article class="design-card"><div class="design-photo western" role="img" aria-label="Decorative leather belt design"></div><h3>Heritage Ornament</h3><p>A confident design inspired by traditional leatherwork.</p></article>
-      <article class="design-card"><div class="design-photo statement" role="img" aria-label="Wide statement leather belt design"></div><h3>Wide Statement</h3><p>A bold silhouette with a sculptural buckle detail.</p></article>
+      <article class="design-card"><div class="design-photo stitched" role="img" aria-label="Hand-stitched leather belt design"></div><h3>Hand-stitched Classic</h3><p>Contrast edge stitching with a solid everyday buckle.</p><p class="design-price">KSh 3,200</p><button class="add-button" type="button" data-add-to-cart data-product-id="belt-hand-stitched-classic" data-product-name="Hand-stitched Classic" data-product-price="3200" data-product-category="Belts">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo braided" role="img" aria-label="Braided leather belt design"></div><h3>Artisan Braid</h3><p>Textured woven leather for a distinctive finish.</p><p class="design-price">KSh 4,100</p><button class="add-button" type="button" data-add-to-cart data-product-id="belt-artisan-braid" data-product-name="Artisan Braid" data-product-price="4100" data-product-category="Belts">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo western" role="img" aria-label="Decorative leather belt design"></div><h3>Heritage Ornament</h3><p>A confident design inspired by traditional leatherwork.</p><p class="design-price">KSh 4,800</p><button class="add-button" type="button" data-add-to-cart data-product-id="belt-heritage-ornament" data-product-name="Heritage Ornament" data-product-price="4800" data-product-category="Belts">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo statement" role="img" aria-label="Wide statement leather belt design"></div><h3>Wide Statement</h3><p>A bold silhouette with a sculptural buckle detail.</p><p class="design-price">KSh 5,200</p><button class="add-button" type="button" data-add-to-cart data-product-id="belt-wide-statement" data-product-name="Wide Statement" data-product-price="5200" data-product-category="Belts">Add to cart</button></article>
     </div>
   </section>
   <footer><span>© <span id="year"></span> MasterCraft Leather Atelier</span><span>Handmade with care.</span></footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <p id="cart-status" class="sr-only" role="status" aria-live="polite"></p>
 </body>
 </html>

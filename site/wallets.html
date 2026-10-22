@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f0e8">
   <title>Leather Wallets | MasterCraft Leather Atelier</title>
+  <script src="cart.js" defer></script>
   <style>
     :root { --ink: #2e211b; --muted: #75665b; --paper: #f5f0e8; --leather: #8b4e32; font-family: "Segoe UI", Arial, sans-serif; }
     * { box-sizing: border-box; }
@@ -20,11 +21,17 @@
     .image { min-height: 440px; background: url("https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=1200&q=85") center / cover, #91664c; }
     .designs { width: min(1120px, 86vw); margin: 0 auto 76px; }
     .designs h2 { margin: 10px 0 28px; font: 400 clamp(30px, 4vw, 42px) Georgia, "Times New Roman", serif; }
+    .price-note { margin: -16px 0 24px; font-size: 12px; }
     .design-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
     .design-card { min-width: 0; }
     .design-photo { aspect-ratio: 4 / 4.8; background-position: center; background-size: cover; background-color: #91664c; }
     .design-card h3 { margin: 13px 0 5px; font: 400 19px Georgia, "Times New Roman", serif; }
     .design-card p { margin: 0; font-size: 13px; line-height: 1.6; }
+    .design-price { margin-top: 10px !important; color: var(--ink); font-size: 14px !important; font-weight: 700; }
+    .add-button { min-height: 40px; margin-top: 10px; padding: 0 14px; border: 0; background: var(--ink); color: #fffaf3; cursor: pointer; font: inherit; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .add-button:hover { background: var(--leather); }
+    .cart-link { margin-left: 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .bifold { background-image: url("https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=700&q=80"); }
     .cardholder { background-image: url("https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=700&q=80"); }
     .zipwallet { background-image: url("https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"); }
@@ -37,7 +44,7 @@
 <body>
   <header>
     <a class="brand" href="index.html">MasterCraft<span>Leather Atelier</span></a>
-    <nav><a href="index.html#collection">All collections</a></nav>
+    <nav><a href="index.html#collection">All collections</a><a class="cart-link" href="cart.html">Cart (<span data-cart-count>0</span>)</a></nav>
   </header>
   <main>
     <div>
@@ -51,14 +58,16 @@
   <section class="designs" aria-labelledby="designs-title">
     <div class="eyebrow">Explore the collection</div>
     <h2 id="designs-title">Small pieces, made to last</h2>
+    <p class="price-note">Prices are starter estimates and can be updated to match your actual products.</p>
     <div class="design-grid">
-      <article class="design-card"><div class="design-photo bifold" role="img" aria-label="Classic leather bifold wallet"></div><h3>Classic Bifold</h3><p>Traditional organization in a slim profile.</p></article>
-      <article class="design-card"><div class="design-photo cardholder" role="img" aria-label="Leather card holder design"></div><h3>Card Sleeve</h3><p>Lightweight carry for the essentials.</p></article>
-      <article class="design-card"><div class="design-photo zipwallet" role="img" aria-label="Leather zip wallet design"></div><h3>Zip Around</h3><p>Secure storage with room for more.</p></article>
-      <article class="design-card"><div class="design-photo slimwallet" role="img" aria-label="Slim leather wallet design"></div><h3>Minimal Fold</h3><p>Clean lines for a pocket-friendly everyday wallet.</p></article>
+      <article class="design-card"><div class="design-photo bifold" role="img" aria-label="Classic leather bifold wallet"></div><h3>Classic Bifold</h3><p>Traditional organization in a slim profile.</p><p class="design-price">KSh 3,800</p><button class="add-button" type="button" data-add-to-cart data-product-id="wallet-classic-bifold" data-product-name="Classic Bifold" data-product-price="3800" data-product-category="Wallets">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo cardholder" role="img" aria-label="Leather card holder design"></div><h3>Card Sleeve</h3><p>Lightweight carry for the essentials.</p><p class="design-price">KSh 2,400</p><button class="add-button" type="button" data-add-to-cart data-product-id="wallet-card-sleeve" data-product-name="Card Sleeve" data-product-price="2400" data-product-category="Wallets">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo zipwallet" role="img" aria-label="Leather zip wallet design"></div><h3>Zip Around</h3><p>Secure storage with room for more.</p><p class="design-price">KSh 4,500</p><button class="add-button" type="button" data-add-to-cart data-product-id="wallet-zip-around" data-product-name="Zip Around" data-product-price="4500" data-product-category="Wallets">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo slimwallet" role="img" aria-label="Slim leather wallet design"></div><h3>Minimal Fold</h3><p>Clean lines for a pocket-friendly everyday wallet.</p><p class="design-price">KSh 3,200</p><button class="add-button" type="button" data-add-to-cart data-product-id="wallet-minimal-fold" data-product-name="Minimal Fold" data-product-price="3200" data-product-category="Wallets">Add to cart</button></article>
     </div>
   </section>
   <footer><span>© <span id="year"></span> MasterCraft Leather Atelier</span><span>Handmade with care.</span></footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <p id="cart-status" class="sr-only" role="status" aria-live="polite"></p>
 </body>
 </html>

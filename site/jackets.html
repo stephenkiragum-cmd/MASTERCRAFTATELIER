@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f0e8">
   <title>Leather Jackets | MasterCraft Leather Atelier</title>
+  <script src="cart.js" defer></script>
   <style>
     :root { --ink: #2e211b; --muted: #75665b; --paper: #f5f0e8; --leather: #8b4e32; font-family: "Segoe UI", Arial, sans-serif; }
     * { box-sizing: border-box; }
@@ -20,11 +21,17 @@
     .image { min-height: 440px; background: url("https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=85") center / cover, #775a46; }
     .designs { width: min(1120px, 86vw); margin: 0 auto 76px; }
     .designs h2 { margin: 10px 0 28px; font: 400 clamp(30px, 4vw, 42px) Georgia, "Times New Roman", serif; }
+    .price-note { margin: -16px 0 24px; font-size: 12px; }
     .design-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
     .design-card { min-width: 0; }
     .design-photo { aspect-ratio: 4 / 4.8; background-position: center; background-size: cover; background-color: #775a46; }
     .design-card h3 { margin: 13px 0 5px; font: 400 19px Georgia, "Times New Roman", serif; }
     .design-card p { margin: 0; font-size: 13px; line-height: 1.6; }
+    .design-price { margin-top: 10px !important; color: var(--ink); font-size: 14px !important; font-weight: 700; }
+    .add-button { min-height: 40px; margin-top: 10px; padding: 0 14px; border: 0; background: var(--ink); color: #fffaf3; cursor: pointer; font: inherit; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .add-button:hover { background: var(--leather); }
+    .cart-link { margin-left: 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .biker { background-image: url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"); }
     .moto { background-image: url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=700&q=80"); }
     .minimal { background-image: url("https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=700&q=80"); }
@@ -37,7 +44,7 @@
 <body>
   <header>
     <a class="brand" href="index.html">MasterCraft<span>Leather Atelier</span></a>
-    <nav><a href="index.html#collection">All collections</a></nav>
+    <nav><a href="index.html#collection">All collections</a><a class="cart-link" href="cart.html">Cart (<span data-cart-count>0</span>)</a></nav>
   </header>
   <main>
     <div>
@@ -51,14 +58,16 @@
   <section class="designs" aria-labelledby="designs-title">
     <div class="eyebrow">Explore the collection</div>
     <h2 id="designs-title">Distinctive layers</h2>
+    <p class="price-note">Prices are starter estimates and can be updated to match your actual products.</p>
     <div class="design-grid">
-      <article class="design-card"><div class="design-photo biker" role="img" aria-label="Leather biker jacket design"></div><h3>Rider Jacket</h3><p>Bold lines and functional details.</p></article>
-      <article class="design-card"><div class="design-photo moto" role="img" aria-label="Leather moto jacket design"></div><h3>City Moto</h3><p>A versatile shape for everyday wear.</p></article>
-      <article class="design-card"><div class="design-photo minimal" role="img" aria-label="Minimal leather jacket design"></div><h3>Clean Cut</h3><p>Understated styling with a neat profile.</p></article>
-      <article class="design-card"><div class="design-photo vintage" role="img" aria-label="Vintage inspired leather jacket design"></div><h3>Heritage Zip</h3><p>Classic workshop character, made to be worn in.</p></article>
+      <article class="design-card"><div class="design-photo biker" role="img" aria-label="Leather biker jacket design"></div><h3>Rider Jacket</h3><p>Bold lines and functional details.</p><p class="design-price">KSh 24,000</p><button class="add-button" type="button" data-add-to-cart data-product-id="jacket-rider" data-product-name="Rider Jacket" data-product-price="24000" data-product-category="Jackets">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo moto" role="img" aria-label="Leather moto jacket design"></div><h3>City Moto</h3><p>A versatile shape for everyday wear.</p><p class="design-price">KSh 22,500</p><button class="add-button" type="button" data-add-to-cart data-product-id="jacket-city-moto" data-product-name="City Moto" data-product-price="22500" data-product-category="Jackets">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo minimal" role="img" aria-label="Minimal leather jacket design"></div><h3>Clean Cut</h3><p>Understated styling with a neat profile.</p><p class="design-price">KSh 21,000</p><button class="add-button" type="button" data-add-to-cart data-product-id="jacket-clean-cut" data-product-name="Clean Cut" data-product-price="21000" data-product-category="Jackets">Add to cart</button></article>
+      <article class="design-card"><div class="design-photo vintage" role="img" aria-label="Vintage inspired leather jacket design"></div><h3>Heritage Zip</h3><p>Classic workshop character, made to be worn in.</p><p class="design-price">KSh 26,000</p><button class="add-button" type="button" data-add-to-cart data-product-id="jacket-heritage-zip" data-product-name="Heritage Zip" data-product-price="26000" data-product-category="Jackets">Add to cart</button></article>
     </div>
   </section>
   <footer><span>© <span id="year"></span> MasterCraft Leather Atelier</span><span>Handmade with care.</span></footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <p id="cart-status" class="sr-only" role="status" aria-live="polite"></p>
 </body>
 </html>
